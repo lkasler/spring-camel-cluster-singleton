@@ -7,8 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ClusterBeanConfiguration {
-    @Configuration
-    public static class BeanConfiguration {
 
         @Bean
         public CustomClusterSingletonService customService(CamelClusterService clusterService) throws Exception {
@@ -23,6 +21,4 @@ public class ClusterBeanConfiguration {
             });
             return service;
         }
-
     }
-}
