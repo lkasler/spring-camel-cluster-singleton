@@ -34,3 +34,16 @@ The above consuming jms foo endpoint and delegates to other queue:
 ```from("master:lock1:jms:foo").to("activemq:wine")```
 
 See: ```ClasterRoutes.java```
+
+## Choose Cluster Service based on environment
+
+By default file based cluster leader election is enabled, setting config to:
+
+```camel.component.file.cluster.service.enabled = true```
+
+To enable kubernetes cluster service you should disable file based cluster
+and enable kubernetes config:
+
+```camel.component.kubernetes.cluster.service.enabled=true```
+
+
