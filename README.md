@@ -1,5 +1,5 @@
 # spring-camel-cluster-singleton
-Camel based cluster singleton service using camel's core FileLockClusterService.
+Camel based cluster singleton service using camel's core FileLockClusterService or KubernetesClusterService.
 
 
 ## Camel Leader Election on Kubernetes and Openshift, based of file cluster service
