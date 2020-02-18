@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: camel-leader-election
+  name: spring-camel-cluster-singleton

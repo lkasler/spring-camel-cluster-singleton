@@ -6,7 +6,7 @@ Camel based cluster singleton service using camel's core FileLockClusterService.
 
 Based on blog article post: https://www.nicolaferraro.me/2017/10/17/creating-clustered-singleton-services-on-kubernetes/
 
-Original gitlab link: [https://github.com/nicolaferraro/camel-leader-election.git](https://github.com/nicolaferraro/camel-leader-election.git)
+Original gitlab link: [https://github.com/nicolaferraro/spring-camel-cluster-singleton.git](https://github.com/nicolaferraro/spring-camel-cluster-singleton.git)
 
 ## Should be changed to File Cluster Service
 

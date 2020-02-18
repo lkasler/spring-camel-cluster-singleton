@@ -2,4 +2,4 @@ spec:
   replicas: 3
   template:
     spec:
-      serviceAccountName: "camel-leader-election"
+      serviceAccountName: "spring-camel-cluster-singleton"

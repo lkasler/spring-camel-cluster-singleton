@@ -1,11 +1,11 @@
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: camel-leader-election
+  name: spring-camel-cluster-singleton
 subjects:
 - kind: ServiceAccount
-  name: camel-leader-election
+  name: spring-camel-cluster-singleton
 roleRef:
   kind: Role
-  name: camel-leader-election
+  name: spring-camel-cluster-singleton
   apiGroup: rbac.authorization.k8s.io
