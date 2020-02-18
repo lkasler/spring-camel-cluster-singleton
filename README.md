@@ -28,7 +28,9 @@ The master service endpoint uri format is the following:
 
 ```master:namespace:delegateUri```
 
-Where you can define eni endpoint, queue, timer, etc
+Where you can define any endpoint, queue, timer, etc
 
 The above consuming jms foo endpoint and delegates to other queue:
 ```from("master:lock1:jms:foo").to("activemq:wine")```
+
+See: ```ClasterRoutes.java```
