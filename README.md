@@ -8,7 +8,7 @@ Based on blog article post: https://www.nicolaferraro.me/2017/10/17/creating-clu
 
 Original gitlab link: [https://github.com/nicolaferraro/spring-camel-cluster-singleton.git](https://github.com/nicolaferraro/spring-camel-cluster-singleton.git)
 
-## Should be changed to File Cluster Service
+## Enable File Cluster Service
 
 Service: ```FileLockClusterService```
 
