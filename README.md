@@ -21,3 +21,14 @@ camel.component.file.cluster.service.root = ${java.io.tmpdir}
 camel.component.file.cluster.service.cluster-labels[group]=${project.groupId}
 camel.component.file.cluster.service.cluster-labels[app]=${project.artifactId}
 ```
+
+## To configure endpoints
+
+The master service endpoint uri format is the following:
+
+```master:namespace:delegateUri```
+
+Where you can define eni endpoint, queue, timer, etc
+
+The above consuming jms foo endpoint and delegates to other queue:
+```from("master:lock1:jms:foo").to("activemq:wine")```
