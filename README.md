@@ -2,11 +2,13 @@
 Camel based cluster singleton service using camel's core FileLockClusterService or KubernetesClusterService.
 
 
-## Camel Leader Election on Kubernetes and Openshift, based of file cluster service
+## Camel Leader Election using config based ClusterService
 
 Based on blog article post: https://www.nicolaferraro.me/2017/10/17/creating-clustered-singleton-services-on-kubernetes/
 
 Original gitlab link: [https://github.com/nicolaferraro/spring-camel-cluster-singleton.git](https://github.com/nicolaferraro/spring-camel-cluster-singleton.git)
+
+The app at the moment support file and kubernetes based Cluster Service implementations.
 
 ## Enable File Cluster Service
 
