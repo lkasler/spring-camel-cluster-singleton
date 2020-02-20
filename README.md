@@ -16,6 +16,8 @@ Service: ```FileLockClusterService```
 
 Config:  [Camel Cluster Service](https://camel.apache.org/manual/latest/clustering.html)
 
+First comment kubernetes based config lines in ```application.properties``` if there are present then set/uncomment the file lock based clustering like this:
+
 ```
 camel.component.file.cluster.service.enabled = true
 camel.component.file.cluster.service.id = ${random.uuid}
@@ -23,6 +25,27 @@ camel.component.file.cluster.service.root = ${java.io.tmpdir}
 camel.component.file.cluster.service.cluster-labels[group]=${project.groupId}
 camel.component.file.cluster.service.cluster-labels[app]=${project.artifactId}
 ```
+
+## Enable Kubernetes Cluster Service
+
+First comment file based clustering lines  in ```application.properties``` if there are present then set/uncomment the kubernetes based clustering like this:
+
+```
+camel.component.kubernetes.cluster.service.enabled=true
+camel.component.kubernetes.cluster.service.cluster-labels[group]=${project.groupId}
+camel.component.kubernetes.cluster.service.cluster-labels[app]=${project.artifactId}
+```
+
+
+Deploy to kubernetes wih command: 
+```eval $(minikube docker-env)```
+```mvn fabric8:deploy```
+For the above programs use the same terminal session otherwise you will be phasing image pull error in kubernetes
+
+Check the cluster singleton service in the logs:
+
+
+
 
 ## To configure endpoints
 
