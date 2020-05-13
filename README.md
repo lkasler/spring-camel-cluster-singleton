@@ -38,6 +38,15 @@ camel.component.kubernetes.cluster.service.cluster-labels[app]=${project.artifac
 
 
 Deploy to kubernetes wih command: 
+
+Check if minikube already running, start it if not already started:
+```minikube start``` 
+
+
+```kubectl apply -f src/main/fabric8/raw/rb.yml ```
+```kubectl apply -f src/main/fabric8/raw/role.yml```
+```kubectl apply -f src/main/fabric8/raw/sa.yml ```
+
 ```eval $(minikube docker-env)```
 ```mvn fabric8:deploy```
 For the above programs use the same terminal session otherwise you will be phasing image pull error in kubernetes
