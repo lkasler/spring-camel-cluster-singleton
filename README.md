@@ -72,3 +72,23 @@ and enable kubernetes config:
 ```camel.component.kubernetes.cluster.service.enabled=true```
 
 
+## Testing
+
+Set the environment variables, file lock or kubernetes
+
+### Testing on kubernetes
+
+If you are using minikube execute: ```minikube start```
+then: ```eval $(minikube docker-env)```
+Configure kubectl, run command ```mvn fabric8:deploy```
+
+Use kubernetes command:
+Kubectl cheet sheet: ```https://kubernetes.io/docs/reference/kubectl/cheatsheet/```
+
+
+* kubectl get pods, 
+* kubectl logs 
+* kubectl delete pod
+* kubectl get deployments 
+* kubectl delete deployment
+ 
