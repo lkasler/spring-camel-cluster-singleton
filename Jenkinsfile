@@ -29,30 +29,30 @@ pipeline {
             }
         }
 
-        stage('Build image') {
-            environment {
-                imageName = "spring-camel-cluster-singleton:${version}-autotest"
-            }
+//        stage('Build image') {
+//            environment {
+//                imageName = "spring-camel-cluster-singleton:${version}-autotest"
+//            }
 
-            steps {
+//            steps {
                 //sh """
                 //    buildah bud --tag ${imageName} .
                 //    buildah push ${imageName} docker://docker.khb.hu/poc/${imageName}
                 //    buildah rmi ${imageName}
                 //"""
-            }
-        }
+//            }
+//        }
 
-        stage('Deploy k8s') {
-            steps {
-
-            }
-        }
+//        stage('Deploy k8s') {
+//            steps {
+//
+//            }
+//        }
     }
 
-    post {
-        cleanup {
-
-        }
-    }
+//    post {
+//        cleanup {
+//
+//        }
+//    }
 }
