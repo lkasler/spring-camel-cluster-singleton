@@ -31,19 +31,21 @@ pipeline {
             }
         }
 
-//        stage('Build image') {
-//            environment {
-//                imageName = "spring-camel-cluster-singleton:${version}-autotest"
-//            }
+        stage('Build image') {
+            environment {
+                imageName = "spring-camel-cluster-singleton:${version}-autotest"
+            }
 
-//            steps {
-                //sh """
-                //    buildah bud --tag ${imageName} .
-                //    buildah push ${imageName} docker://docker.khb.hu/poc/${imageName}
-                //    buildah rmi ${imageName}
-                //"""
-//            }
-//        }
+            steps {
+                final pom = readMavenPom file: 'pom.xml'
+
+                sh """
+                    buildah bud --tag ${imageName} --build-arg APP_VERSION=${pom.version} .
+                    buildah push ${imageName} docker://docker.khb.hu/poc/${imageName}
+                    buildah rmi ${imageName}
+                """
+            }
+        }
 
 //        stage('Deploy k8s') {
 //            steps {
