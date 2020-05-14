@@ -19,8 +19,8 @@ spec:
       serviceAccountName: "spring-camel-cluster-singleton"
       volumes:
         - name: lock
-        persistentVolumeClaim:
-          claimName: spring-camel-cluster-singleton-pvc
+          persistentVolumeClaim:
+            claimName: spring-camel-cluster-singleton-pvc
 
       containers:
         - name: spring-camel-cluster-singleton
