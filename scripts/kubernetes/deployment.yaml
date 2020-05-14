@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-camel-cluster-singleton
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      group: hu.bridgesoft
+      app: spring-camel-cluster-singleton
+
+  template:
+    metadata:
+      labels:
+        group: hu.bridgesoft
+        app: spring-camel-cluster-singleton
+
+    spec:
+      serviceAccountName: "spring-camel-cluster-singleton"
+      volumes:
+        - name: lock
+          persistentVolumeClaim:
+            claimName: spring-camel-cluster-singleton-pvc
+
+      containers:
+        - name: spring-camel-cluster-singleton
+          image: app-image
+          volumeMounts:
+            - name: lock
+              mountPath: "/opt/lock"
