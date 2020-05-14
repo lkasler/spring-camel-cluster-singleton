@@ -50,7 +50,7 @@ pipeline {
                 dir("scripts/kubernetes") {
                     sh """
                         kubectl create namespace ${namespace}
-                        kustomize edit set image app-image=${imageName}
+                        kustomize edit set image app-image=docker.khb.hu/poc/${imageName}
                         kustomize edit set namespace ${namespace}
                         kustomize build . | kubectl apply -f -
                     """
