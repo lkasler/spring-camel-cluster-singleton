@@ -49,16 +49,23 @@ pipeline {
             }
         }
 
-//        stage('Deploy k8s') {
-//            steps {
-//
-//            }
-//        }
+        stage('Deploy k8s') {
+            steps {
+                dir("scripts/kubernetes") {
+                    sh """
+                        kubectl create namespace ${namespace}
+                        kustomize edit set image app-image=${imageName}
+                        kustomize edit set namespace ${namespace}
+                        kustomize build . | kubectl apply -f -
+                    """
+                }
+            }
+        }
     }
 
-//    post {
-//        cleanup {
-//
-//        }
-//    }
+    post {
+        cleanup {
+            cleanWs()
+        }
+    }
 }
