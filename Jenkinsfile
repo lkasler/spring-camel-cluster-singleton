@@ -16,12 +16,16 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            checkout scm
+            steps {
+                checkout scm
+            }
         }
 
         stage('Build atrifact') {
-            withMaven(maven: "${maven}") {
-                sh 'mvn clean package'
+            steps {
+                withMaven(maven: "${maven}") {
+                    sh 'mvn clean package'
+                }
             }
         }
 
@@ -40,7 +44,9 @@ pipeline {
         }
 
         stage('Deploy k8s') {
+            steps {
 
+            }
         }
     }
 
