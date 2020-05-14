@@ -11,7 +11,7 @@ public class CustomClusterSingletonService {
     private boolean started;
 
     public void start() {
-        LOG.info("CustomService has been started on the master pod");
+        LOG.info("CustomClusterSingletonService has been started on the master pod");
         started = true;
     }
 
@@ -20,7 +20,7 @@ public class CustomClusterSingletonService {
     }
 
     public void stop() {
-        LOG.info("CustomService has been stopped on the master pod");
+        LOG.info("CustomClusterSingletonService has been stopped on the master pod");
         started = false;
     }
 
