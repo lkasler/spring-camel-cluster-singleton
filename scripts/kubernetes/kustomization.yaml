@@ -4,4 +4,6 @@ resources:
   - sa.yml
   - role.yml
   - rb.yml
+  - pv.yaml
+  - pvc.yaml
   - deployment.yaml

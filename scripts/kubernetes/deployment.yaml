@@ -16,7 +16,15 @@ spec:
         app: spring-camel-cluster-singleton
 
     spec:
+      serviceAccountName: "spring-camel-cluster-singleton"
+      volumes:
+        - name: lock
+        persistentVolumeClaim:
+          claimName: spring-camel-cluster-singleton-pvc
+
       containers:
         - name: spring-camel-cluster-singleton
           image: app-image
-      serviceAccountName: "spring-camel-cluster-singleton"
+          volumeMounts:
+            - name: lock
+              mountPath: "/opt/lock"
