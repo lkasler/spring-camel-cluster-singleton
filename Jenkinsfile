@@ -39,13 +39,13 @@ pipeline {
             steps {
                 script {
                     final pom = readMavenPom file: 'pom.xml'
-                }
 
-                sh """
-                    buildah bud --tag ${imageName} --build-arg APP_VERSION=${pom.version} .
-                    buildah push ${imageName} docker://docker.khb.hu/poc/${imageName}
-                    buildah rmi ${imageName}
-                """
+                    sh """
+                        buildah bud --tag ${imageName} --build-arg APP_VERSION=${pom.version} .
+                        buildah push ${imageName} docker://docker.khb.hu/poc/${imageName}
+                        buildah rmi ${imageName}
+                    """
+                }
             }
         }
 
