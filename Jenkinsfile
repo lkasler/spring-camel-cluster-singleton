@@ -37,7 +37,9 @@ pipeline {
             }
 
             steps {
-                final pom = readMavenPom file: 'pom.xml'
+                script {
+                    final pom = readMavenPom file: 'pom.xml'
+                }
 
                 sh """
                     buildah bud --tag ${imageName} --build-arg APP_VERSION=${pom.version} .
