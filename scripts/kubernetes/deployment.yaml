@@ -6,11 +6,13 @@ spec:
   replicas: 3
   selector:
     matchLabels:
+      group: hu.bridgesoft
       app: spring-camel-cluster-singleton
 
   template:
     metadata:
       labels:
+        group: hu.bridgesoft
         app: spring-camel-cluster-singleton
 
     spec:
